@@ -1,0 +1,9 @@
+a {
+  padding: 1em;
+  margin: 2em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(7);
+}/*# sourceMappingURL=style.css.map */
