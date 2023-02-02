@@ -56,14 +56,14 @@ nav{
     height: 4em;
     padding: 1em;
 
-    @include flex($justify: space-between);
+    @include flex($justify:space-between);
 
         img{
             width: 70px;
         }
 
         ul{
-            @include flex($justify: space-between);
+            @include flex($justify:space-between);
             list-style-type: none;
         }
 
