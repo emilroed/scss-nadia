@@ -23,3 +23,10 @@ $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-align: center;
 }
+
+@mixin cta-boks($width: 20vw){
+    width: $width;
+    background-color: $nav-color;
+    padding: 2em;
+    margin: 2em auto;
+}
