@@ -63,4 +63,43 @@ nav a {
 }
 nav a:hover {
   color: #3a8479;
+}
+
+.mobile-nav .bars {
+  display: none;
+}
+
+.toggleShow {
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  color: #3a8479;
+}
+
+/* Header billeder/ Banner*/
+.header-img {
+  position: relative;
+  margin-bottom: 1em;
+}
+.header-img .bannertekst {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+.header-img h1 {
+  font-size: 3.5vw;
+}
+.header-img p {
+  font-size: 2vw;
+}
+.header-img a {
+  background-color: #3a8479;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */

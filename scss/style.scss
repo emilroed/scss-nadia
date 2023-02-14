@@ -1,35 +1,36 @@
-/*Variabler*/
-$bg-color: #f0f0f0;
-$nav-color: #ffffff;
-$footer-color: #0a1f1c; 
-$primary-color: #3a8479;
-$secondary-color: #133833;
-$text-color: #484848;
-$padding: 0.5em;
-$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// /*Variabler*/
+// $bg-color: #f0f0f0;
+// $nav-color: #ffffff;
+// $footer-color: #0a1f1c; 
+// $primary-color: #3a8479;
+// $secondary-color: #133833;
+// $text-color: #484848;
+// $padding: 0.5em;
+// $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-/*Mixins*/
-@mixin flex($justify:center, $align:center){
-    display: flex;
-    align-items: $align;
-    justify-content: $justify;
-}
+// /*Mixins*/
+// @mixin flex($justify:center, $align:center){
+//     display: flex;
+//     align-items: $align;
+//     justify-content: $justify;
+// }
+@use 'partials';
 
 body{
     margin: 0;
     box-sizing: border-box;
-    font-family: $font;
-    background-color: $bg-color;
+    font-family: partials.$font;
+    background-color: partials.$bg-color;
 
         p{
             font-size: 16px;
-            color: $text-color;
+            color: partials.$text-color;
             line-height: 1.5;
         }
 
         h1, h2, h3, h4, h5, h6{
             font-weight: 600;
-            color: $text-color;
+            color: partials.$text-color;
         }
 }
 
@@ -46,37 +47,77 @@ img{
 
 header{
     grid-column: 1/6;
-    @include flex($justify: space-between);
-    background-color: $nav-color;
-    border-bottom: 4px solid $primary-color;
+    @include partials.flex($justify: space-between);
+    background-color: partials.$nav-color;
+    border-bottom: 4px solid partials.$primary-color;
 }
 
 nav{
-    color: $text-color;
+    color: partials.$text-color;
     height: 4em;
     padding: 1em;
 
-    @include flex($justify:space-between);
+    @include partials.flex($justify:space-between);
 
         img{
             width: 70px;
         }
 
         ul{
-            @include flex($justify:space-between);
+            @include partials.flex($justify:space-between);
             list-style-type: none;
         }
 
         a{
-            color: $text-color;
-            padding: $padding;
-            margin: $padding;
+            color: partials.$text-color;
+            padding: partials.$padding;
+            margin: partials.$padding;
             font-size: 20px;
             font-weight: bold;
             text-decoration: none;
         }
 
         a:hover{
-            color: $primary-color;
+            color: partials.$primary-color;
+        }
+}
+.mobile-nav{
+
+    .bars{
+        display: none;
+    }
+}
+.toggleShow{
+    display: flex;
+    flex-direction: column;
+}
+
+.active{
+    color: partials.$primary-color;
+}
+
+/* Header billeder/ Banner*/
+
+.header-img{
+    position: relative;
+    margin-bottom: 1em;
+
+        .bannertekst{
+            position: absolute;
+            top: 25%;
+            left: 5%;
+        }
+
+        h1{
+            font-size: 3.5vw;
+        }
+
+        p{
+            font-size: 2vw;
+        }
+
+        a{
+            @include partials.btn;
+            position: absolute;
         }
 }
