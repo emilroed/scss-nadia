@@ -238,3 +238,199 @@ main{
     background-size: cover;
     background-position: center;
 }
+
+/* Kontakt formular*/
+
+.kontakt-bg-img{
+    grid-column: 1/7;
+    background: linear-gradient(rgba(142, 142, 142, 0.8),rgba(142, 142, 142, 0.8)), url(../img/meeting.jpg);
+    background-size: cover;
+}
+
+.kontaktform{
+    background-color: partials.$bg-color;
+    border-radius: 5px;
+    padding:1.3em;
+    width: 50%;
+    margin: 4em auto; /*margin ved hjælp af auto centrerer formen*/
+
+        h3{
+            font-size: 25px;
+            margin-bottom: 0;
+            margin-left: 0.5em;
+        }
+        
+        p{
+            margin-left: 1em;
+        }
+}
+
+.section-form{
+    display: flex;
+}
+
+input[type=text], input[type=email], input[type=tel], select, textarea{
+    width: 100%;
+    padding: 1em;
+    border: 2px solid partials.$secondary-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: partials.$font;
+    margin: 0.5em 1em 1em 1em;
+}
+
+input[type=submit]{
+    @include partials.btn;
+    border: none;
+    width: 100%;
+    margin: 0 1em;
+}
+
+.visually-hidden{ /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+/*Footer*/
+
+footer:nth-of-type(1){
+    grid-column: 1/6;
+    background-color: partials.$footer-color;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em 4em;
+
+        p, h4{
+            color: partials.$nav-color;
+            line-height: 0.5;
+        }
+        h4{
+            font-size: 18px;
+        }
+        a{
+            color: partials.$primary-color
+        }
+        .logo-footer{
+            width: 100px;
+            height: auto;
+        }
+}
+
+.footer-left{
+    grid-column: 1/2;
+}
+
+.footer-right{
+    grid-column: 2/3;
+    text-align: right;
+    margin: auto 0;
+}
+
+/*footer bund*/
+footer:nth-of-type(2){
+    grid-column: 1/6;
+    background-color: partials.$secondary-color;
+    text-align: center;
+        p{
+            color: partials.$bg-color;
+        }
+}
+
+/*****************--------Mobil-------************/
+@media screen and (max-width: 900px){
+    header:nth-of-type(1){
+    display: inline;
+    }
+
+    .mobile-nav{
+        color: partials.$primary-color;
+
+            .bars{
+                display: flex;
+            }
+        }
+
+    .desktop-nav{
+        display: none;
+        height: auto;
+        border-top: 4px solid partials.$primary-color;
+
+            ul{
+                flex-direction: column;
+            }
+
+            li{
+                display: flex;
+            }
+    }
+
+    .header-img{
+        .banner-tekst{
+            left: 5%;
+            top: 15%;
+            position: absolute;
+        }
+
+        h1{
+            font-size: 5vw;
+        }
+
+        p{
+            font-size: 4vw;
+        }
+
+        a{
+            @include partials.btn
+        }
+
+        .bg-billede-mobil{
+            display: initial;
+        }
+
+        .bg-billede-desktop{
+            display: none;
+        }
+    }
+
+    main{
+        .cta-wrapper{
+            flex-direction: column;
+        }
+        .cta-1{
+            @include partials.cta-boks($width:80%);
+            img{
+                width: 50%;
+            }
+        }
+
+        .cta-wrapper{
+            flex-direction: column;
+        }
+        .cta-2{
+            @include partials.cta-boks($width:80%);
+            img{
+                width: 50%;
+            }
+        }
+
+        .cta-wrapper{
+            flex-direction: column;
+        }
+        .cta-3{
+            @include partials.cta-boks($width:80%);
+            img{
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+
